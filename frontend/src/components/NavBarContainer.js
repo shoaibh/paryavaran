@@ -13,7 +13,7 @@ import {
 
 const styles = {
   itemMenu: {
-    padding: "10px",
+    padding: "15px 10px 10px 10px",
     listStyleType: "none",
     textDecoration: "none",
     fontSize: "25px",
@@ -127,6 +127,11 @@ class NavbarContainer extends Component {
       <div className="sticky-top">
         <Navbar light expand="md" style={navbarBackground}>
           <Link to="/" style={itemMenu} className="text-white">
+            <img
+              src="/download.png"
+              height="50px"
+              style={{ marginRight: "10px" }}
+            ></img>
             Paryavaran
           </Link>
           <NavbarToggler onClick={this.toggle} />
