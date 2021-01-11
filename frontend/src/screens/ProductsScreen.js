@@ -23,6 +23,7 @@ function ProductsScreen(props) {
   const [uploading, setUploading] = useState(false);
   const productList = useSelector((state) => state.productList);
   const { loading, products, error } = productList;
+  const [productTypeValue, setProductTypeValue] = useState("");
 
   const productSave = useSelector((state) => state.productSave);
   const {
@@ -192,10 +193,11 @@ function ProductsScreen(props) {
                 {productType && (
                   <select
                     name="productType"
-                    value={typeValue}
+                    value={productTypeValue}
                     id="productType"
                     onChange={(e) => {
-                      setTypeValue(productType[e.target.value].toLowerCase());
+                      setProductTypeValue(e.target.value);
+                      setTypeValue(productType[e.target.value]);
                     }}
                   >
                     {Object.keys(productType).map((product) => (

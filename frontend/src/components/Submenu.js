@@ -49,7 +49,7 @@ const Submenu = ({ option, ItemList, handleSubMenuExit }) => {
                 ? "/images/Energy.jpeg"
                 : option === "essentials"
                 ? "/images/Essentials.jpeg"
-                : "/images/others.jpeg"
+                : "/images/Others.jpeg"
             }
           />
         </Col>
