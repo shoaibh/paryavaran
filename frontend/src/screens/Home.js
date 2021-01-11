@@ -73,13 +73,17 @@ const Home = () => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    const productSearch = searchKeyword
-      .toLowerCase()
-      .split(" ")
-      .join("_");
-    if (productSearch == "energy" || productSearch == "essentials")
-      history.push(`/category/${searchKeyword}`);
-    else history.push(`/productList/${productSearch}`);
+    const productSearch =
+      searchKeyword &&
+      searchKeyword
+        .toLowerCase()
+        .split(" ")
+        .join("_");
+    if (productSearch) {
+      if (productSearch == "energy" || productSearch == "essentials")
+        history.push(`/category/${searchKeyword}`);
+      else history.push(`/productList/${productSearch}`);
+    }
   };
   let speech = new SpeechSynthesisUtterance();
   useEffect(() => {
